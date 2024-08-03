@@ -1,36 +1,38 @@
-/**
- *
- * MeowMusic por qjlk
- * Version 2.0.0-Beta
- * © 2024 1sT-Services
- */
+/** @format */
 
-const app = require("express")();
-const port = process.env.PORT || 443;
-const logger = require("@plugins/logger");
-
-app.use(require("express").json());
-
-app.use(require("express-status-monitor")());
-
-app.use(require("express").static(require("path").join(__dirname)));
-
-app.get("/", (req, res) => {
-  res.sendFile(require("path").join(__dirname, "index.html"));
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
 });
-
-app.get("/add", (req, res) => {
-  res.send(
-    '<meta http-equiv="refresh" content="0; URL=https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands"/>',
-  );
-});
-
-app.get("/support", (req, res) => {
-  res.send(
-    '<meta http-equiv="refresh" content="0; URL=https://discord.gg/QTMaJPfprB"/>',
-  );
-});
-
-app.listen(port, () => {
-  logger.log(`Loaded Web server | Port : (${port})`, `ready`);
+document.onkeydown = function (e) {
+  if (e.keyCode == 123) {
+    // F12 key
+    alert("FUCK YOU SKIDDER");
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+    // Ctrl + Shift + I
+    alert("FUCK YOU SKIDDER");
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+    // Ctrl + Shift + C
+    alert("FUCK YOU SKIDDER");
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+    // Ctrl + Shift + J
+    alert("FUCK YOU SKIDDER");
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+    // Ctrl + U
+    alert("FUCK YOU SKIDDER");
+    return false;
+  }
+};
+window.addEventListener("devtoolschange", function (event) {
+  if (event.detail.isOpen) {
+    // Developer Tools are open
+    // Take appropriate action here
+  }
 });
