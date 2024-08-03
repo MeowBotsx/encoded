@@ -21,13 +21,13 @@ app.get("/", (req, res) => {
 
 app.get("/add", (req, res) => {
   res.send(
-    '<meta http-equiv="refresh" content="0; URL=https://discord.com/api/oauth2/authorize?client_id=1050423676689985606&permissions=8&scope=bot"/>',
+    '<meta http-equiv="refresh" content="0; URL=https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands"/>',
   );
 });
 
 app.get("/support", (req, res) => {
   res.send(
-    '<meta http-equiv="refresh" content="0; URL=https://discord.gg/1st-dev-services-952570101784281139"/>',
+    '<meta http-equiv="refresh" content="0; URL=https://discord.com/invite/QTMaJPfprB"/>',
   );
 });
 
