@@ -95,8 +95,13 @@ document.documentElement.style.setProperty("--color2", getRandomColor());
 // Meow Music Desativado
 document.addEventListener('DOMContentLoaded', function() {
   const inviteButton = document.getElementById('invite-meow-giveaway');
+  const inviteButtons = document.getElementById('invite-meow-giveaway2');
   const modal = document.getElementById('meow-giveaway-modal');
 
+  inviteButtons.addEventListener('click', function(event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+    modal.classList.add('show'); // Adiciona a classe para mostrar o modal
+});
   inviteButton.addEventListener('click', function(event) {
       event.preventDefault(); // Impede o comportamento padrão do link
       modal.classList.add('show'); // Adiciona a classe para mostrar o modal
