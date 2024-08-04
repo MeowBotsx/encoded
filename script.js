@@ -13,7 +13,7 @@ document.onkeydown = function (e) {
   }
 };
 
-// Detectar DevTools
+/* Detectar DevTools
 (function () {
   const threshold = 160;
   let devToolsOpen = false;
@@ -58,6 +58,27 @@ document.onkeydown = function (e) {
   setInterval(check, 1000);
   window.addEventListener("resize", check);
 })();
+*/
+
+//Menu Hamburguer
+function toggleHam() {
+  var ham = document.querySelector(".ham-expand");
+  ham.classList.toggle('active');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const hamExpand = document.querySelector('.ham-expand');
+  const links = document.querySelectorAll('.ham-expand .links a');
+
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      hamExpand.classList.remove('active');
+    });
+  });
+});
+
+
+//Random Color NAME
 
 function getRandomColor() {
   const letters = "0123456789ABCDEF";
