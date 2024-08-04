@@ -13,7 +13,7 @@ document.onkeydown = function (e) {
   }
 };
 
-// Detect DevTools
+// Detectar DevTools
 (function () {
   const threshold = 160;
   let devToolsOpen = false;
@@ -32,19 +32,17 @@ document.onkeydown = function (e) {
       `;
       document.body.appendChild(overlay);
 
-      // Add event listener to the reload button
+      // Adicionar evento ao botão de recarregar
       document.getElementById("reload-button").addEventListener("click", function () {
-        location.reload(); // Reload the page
+        location.reload(); // Recarregue a página
       });
     }
   };
 
   const showAccessDeniedOverlay = () => {
     createAccessDeniedOverlay();
-    document.body.style.overflow = "hidden"; // Prevent scrolling
-    document.getElementById("access-denied-overlay").style.display = "flex"; // Show the overlay
-    // Change background color of the whole page to black
-    document.body.style.backgroundColor = "#000";
+    document.body.style.overflow = "hidden"; // Impedir rolagem
+    document.getElementById("access-denied-overlay").style.display = "flex"; // Mostrar a sobreposição
   };
 
   const check = () => {
@@ -60,3 +58,15 @@ document.onkeydown = function (e) {
   setInterval(check, 1000);
   window.addEventListener("resize", check);
 })();
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+document.documentElement.style.setProperty("--color1", getRandomColor());
+document.documentElement.style.setProperty("--color2", getRandomColor());
