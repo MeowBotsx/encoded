@@ -2,7 +2,7 @@
  *
  * MeowMusic por qjlk
  * Version 2.0.0-Beta
- * © 2024 1sT-Services
+ * © 2024 Encoded-Services
  */
 
 const app = require("express")();
@@ -32,5 +32,5 @@ app.get("/support", (req, res) => {
 });
 
 app.listen(port, () => {
-  logger.log(`Loaded Web server | Port : (${port})`, `ready`);
+  logger.log(`Carregado Servidor Online | Port : (${port})`, `ready`);
 });
