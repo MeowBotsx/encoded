@@ -1,72 +1,62 @@
-/** @format */
-
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
 document.onkeydown = function (e) {
-  if (e.keyCode == 123) {
-    // F12 key
-    e.preventDefault();
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
-    // Ctrl + Shift + I
-    e.preventDefault();
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
-    // Ctrl + Shift + C
-    e.preventDefault();
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
-    // Ctrl + Shift + J
-    e.preventDefault();
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
-    // Ctrl + U
+  if (e.keyCode === 123 || // F12 key
+      (e.ctrlKey && e.shiftKey && e.keyCode === "I".charCodeAt(0)) || // Ctrl + Shift + I
+      (e.ctrlKey && e.shiftKey && e.keyCode === "C".charCodeAt(0)) || // Ctrl + Shift + C
+      (e.ctrlKey && e.shiftKey && e.keyCode === "J".charCodeAt(0)) || // Ctrl + Shift + J
+      (e.ctrlKey && e.keyCode === "U".charCodeAt(0))) { // Ctrl + U
     e.preventDefault();
     return false;
   }
 };
 
-// Monitorar o estado da tecla Ctrl
-let isCtrlPressed = false;
+// Detect DevTools
+(function () {
+  const threshold = 160;
+  let devToolsOpen = false;
 
-document.addEventListener("keydown", function (e) {
-  if (e.keyCode == 17) { // Tecla Ctrl
-    isCtrlPressed = true;
-  }
-  if (isCtrlPressed && e.keyCode == "U".charCodeAt(0)) {
-    e.preventDefault();
-    return false;
-  }
-});
+  const createAccessDeniedOverlay = () => {
+    let overlay = document.getElementById("access-denied-overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "access-denied-overlay";
+      overlay.innerHTML = `
+        <div class="overlay-content">
+          <h1>Acesso Negado</h1>
+          <p>As ferramentas de desenvolvedor estão abertas. Por favor, feche-as e recarregue a página.</p>
+          <button id="reload-button">Recarregar</button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
 
-document.addEventListener("keyup", function (e) {
-  if (e.keyCode == 17) { // Tecla Ctrl
-    isCtrlPressed = false;
-  }
-});
-
-// Prevenir devtools
-window.addEventListener("devtoolschange", function (event) {
-  if (event.detail.isOpen) {
-    alert("Ferramentas de desenvolvedor abertas! Ação não permitida.");
-  }
-});
-
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+      // Add event listener to the reload button
+      document.getElementById("reload-button").addEventListener("click", function () {
+        location.reload(); // Reload the page
+      });
     }
-    return color;
-  }
+  };
 
-  document.documentElement.style.setProperty("--color1", getRandomColor());
-  document.documentElement.style.setProperty("--color2", getRandomColor());
+  const showAccessDeniedOverlay = () => {
+    createAccessDeniedOverlay();
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+    document.getElementById("access-denied-overlay").style.display = "flex"; // Show the overlay
+    // Change background color of the whole page to black
+    document.body.style.backgroundColor = "#000";
+  };
 
+  const check = () => {
+    const isOpen = window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold;
+    if (isOpen) {
+      if (!devToolsOpen) {
+        devToolsOpen = true;
+        showAccessDeniedOverlay();
+      }
+    }
+  };
+
+  setInterval(check, 1000);
+  window.addEventListener("resize", check);
+})();

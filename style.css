@@ -434,6 +434,113 @@ a {
   animation: 4s shiftCredit infinite forwards;
 }
 
+#colorful-text {
+  display: inline-block;
+}
+
+.letter {
+  display: inline;
+  font-size: inherit; /* Ajuste conforme necessário */
+  transition: color 0.5s ease;
+}
+
+#access-denied-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  text-align: center;
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.overlay-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.overlay-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* CSS para ajustar os botões de Discord e Github */
+.discord, .github {
+  padding: 10px; /* Define um padding fixo */
+  border: none; /* Remove bordas padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Texto em negrito */
+  color: #fff; /* Cor do texto */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+  display: inline-flex; /* Garante que ambos sejam inline-flex */
+  align-items: center; /* Centraliza conteúdo verticalmente */
+  justify-content: center; /* Centraliza conteúdo horizontalmente */
+  width: 160px; /* Define uma largura fixa */
+  height: 40px; /* Define uma altura fixa */
+  text-align: center; /* Centraliza o texto */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+.discord {
+  padding: 10px 20px; /* Ajuste o valor conforme necessário */
+  margin-right: 25px;
+  background-color: #5865f2; /* Cor de fundo para Discord */
+}
+
+.github {
+
+  padding: 12px 20px; /* Ajuste o valor conforme necessário */
+  margin-right: 25px;
+  background-color: #0a0a0a; /* Cor de fundo para Github */
+}
+
+.discord:hover, .github:hover {
+  opacity: 0.8; /* Efeito de hover para ambos */
+}
+
+.discord i {
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+  font-size: 20px; /* Define um tamanho fixo para os ícones */
+  line-height: 1; /* Garante que a altura da linha não afete o tamanho do ícone */
+}
+
+ .github i {
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
+  font-size: 20px; /* Define um tamanho fixo para os ícones */
+  line-height: 1; /* Garante que a altura da linha não afete o tamanho do ícone */
+}
+
+/** Bloqueio de DevTools*/
+#reload-button {
+  background: #e1591f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reload-button:hover {
+  background: #d21e1e;
+}
+
 /** --------- KEYFRAMES ------- */
 
 @keyframes inviteHover {

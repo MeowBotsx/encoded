@@ -1,161 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <title>Encoded - Dev | Services</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta content="Site Oficial da Encoded" property="og:title" />
-  <meta content="Um pequeno grupo de amigos que jogam e alguns são desenvolvedores" property="og:description" />
-  <meta content="https://github.com/DaemonTvz" property="og:url" />
-  <meta content="./images/ec.png" property="og:image" />
-  <link rel="icon" type="image/x-icon" href="./images/ec.png">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="tablet.css" rel="stylesheet" type="text/css" />
-  <link href="mobile.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Encoded - Dev | Services</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="Site Oficial da Encoded" property="og:title" />
+    <meta content="Um pequeno grupo de amigos que jogam e alguns são desenvolvedores" property="og:description" />
+    <meta content="https://github.com/DaemonTvz" property="og:url" />
+    <meta content="./images/ec.png" property="og:image" />
+    <link rel="icon" type="image/x-icon" href="./images/ec.png" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="tablet.css" rel="stylesheet" type="text/css" />
+    <link href="mobile.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @keyframes colorChange {
+            0% { color: #FF0000; } /* Vermelho Neon */
+            25% { color: #00FF00; } /* Verde Neon */
+            50% { color: #0000FF; } /* Azul Neon */
+            75% { color: #FFFF00; } /* Amarelo Neon */
+            100% { color: #FF00FF; } /* Rosa Neon */
+        }
+
+        .rainbow-text {
+            animation: colorChange 2s linear infinite;
+            display: inline;
+        }
+
+        /* Adicione o estilo para os botões aqui */
+        .join, .projectButton, .invite {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .join {
+            background-color: #4CAF50;
+        }
+
+        .projectButton {
+            background-color: #008CBA;
+        }
+
+        .invite {
+            background-color: #f44336;
+        }
+
+        .join:hover, .projectButton:hover, .invite:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <div class="icon">
-      <img alt="Encoded" src="./images/ec.png" />
-      <h3><a href="https://discord.gg/QTMaJPfprB" target="_blank">Encoded</a></h3>
-    </div>
-    <div class="ham-expand">
-      <div class="links">
-        <a href="#creations">Projetos</a>
-        <a href="#services">Serviços</a>
-        <a href="#contact">Contate-nos</a>
-      </div>
-      <div class="links">
-        <a href="https://discord.gg/QTMaJPfprB" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-        <a href="https://github.com/DaemonTvz" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
-      </div>
-    </div>
-    <div class="links">
-      <a href="#creations">Projetos</a>
-      <a href="#services">Serviços</a>
-      <a href="#contact">Contate-nos</a>
-    </div>
-    <div class="links">
-      <a href="https://discord.gg/QTMaJPfprB" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-      <a href="https://github.com/DaemonTvz" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
-    </div>
-    <a onclick="toggleHam()" class="ham">Ξ</a>
-  </header>
+    <header>
+        <div class="icon">
+            <img alt="Encoded" src="./images/ec.png" />
+            <h3>
+                <a href="https://discord.gg/QTMaJPfprB" target="_blank">Encoded</a>
+            </h3>
+        </div>
+        <div class="ham-expand">
+            <div class="links">
+                <a href="#creations">Projetos</a>
+                <a href="#services">Serviços</a>
+                <a href="#contact">Contate-nos</a>
+            </div>
+            <div class="links">
+                <a href="https://discord.gg/QTMaJPfprB" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://github.com/DaemonTvz" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+        </div>
+        <div class="links">
+            <a href="#creations">Projetos</a>
+            <a href="#services">Serviços</a>
+            <a href="#contact">Contate-nos</a>
+        </div>
+        <div class="links">
+            <a href="https://discord.gg/QTMaJPfprB" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="https://github.com/DaemonTvz" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+        </div>
+        <a onclick="toggleHam()" class="ham">Ξ</a>
+    </header>
 
-  <div class="lander">
-    <div>
-      <h3 class="title">Encoded - Dev | Services</h3>
-      <h1>Quem somos nós?</h1>
-      <h3>Somos um pequeno grupo de amigos que jogam alguns jogos.<br /> Só queremos que o mundo se torne um lugar melhor.</h3>
-      <div class="buttons">
+    <div class="lander">
+        <div>
+            <h3 class="title">Encoded - Dev | Services</h3>
+            <h1>Quem somos nós?</h1>
+            <h3>
+                Somos um pequeno grupo de amigos que jogam alguns jogos.<br />
+                Só queremos que o mundo se torne um lugar melhor.
+            </h3>
+            <div class="buttons">
+                <a href="https://discord.gg/QTMaJPfprB" class="join" target="_blank">Junte-se a nós</a>
+                <a class="projectButton" href="#creations">Projetos</a>
+            </div>
+        </div>
+        <img alt="Encoded" src="./images/ec.png" />
+    </div>
+
+    <div id="line"></div>
+
+    <div id="creations">
+        <div class="subdiv">
+            <h3 class="title">Encoded - Dev | Services</h3>
+            <h1>Criações</h1>
+        </div>
+        <div class="backdrop"></div>
+        <div id="projects" class="projects">
+            <div class="project">
+                <div>
+                    <h1>Meow Music</h1>
+                    <p>
+                        Com código especialmente otimizado para ouvir música no discord,
+                        combinado com lavalink e uma abordagem minimalista, oferecemos a
+                        você um bot de música com 20 comandos, 24 filtros e uma
+                        experiência de audição como nenhuma outra.
+                    </p>
+                    <a href="https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands" class="invite" target="_blank">Convide-me</a>
+                </div>
+                <img src="./images/344cba11bbfb72bf46202dbf6fea8116.webp" alt="Meow Music" />
+            </div>
+            <div class="project">
+                <div>
+                    <h1>Meow Giveaway</h1>
+                    <p>
+                        Com código especialmente otimizado para realizar sorteios no
+                        discord, combinado com Database e uma abordagem minimalista,
+                        oferecemos a você um bot de sorteio com uma experiencia como
+                        nenhuma outra.
+                    </p>
+                    <a href="#" id="invite-meow-giveaway" class="invite">Convide-me</a>
+                </div>
+                <img src="./images/c51ebf26751d529bb403f86c17b6fc53.webp" alt="Meow Giveaway" />
+            </div>
+        </div>
+    </div>
+
+    <div id="line"></div>
+
+    <div id="services">
+        <div class="subdiv">
+            <h3 class="title">Encoded - Dev | Services</h3>
+            <h1>Serviços</h1>
+        </div>
+        <div class="backdrop"></div>
+        <div class="projects">
+            <div class="project">
+                <div>
+                    <h1>Developer Lounge.</h1>
+                    <p>
+                        Você é um desenvolvedor? Se sim, então venha Junte-se a nós e
+                        obtenha toneladas de informações e ajuda sobre seu código.
+                    </p>
+                    <p>
+                        Ah, você não é um desenvolvedor? Não se preocupe, nunca é tarde
+                        para começar. Junte-se a nós, estamos aqui para te ajudar ♡
+                    </p>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2022/05/27/11/17/coding-7224945_640.png" alt="dev" />
+            </div>
+        </div>
+    </div>
+
+    <div id="line"></div>
+
+    <div class="future">
+        <h1>Nosso futuro</h1>
+        <p>
+            Temos muita coisa acontecendo e muitos planos futuros para vários
+            projetos.<br />
+            Se você quiser nos ajudar ou talvez colaborar conosco, sinta-se à
+            vontade.
+        </p>
         <a href="https://discord.gg/QTMaJPfprB" class="join" target="_blank">Junte-se a nós</a>
-        <a class="projectButton" href="#creations">Projetos</a>
+    </div>
+
+    <div class="contact" id="contact">
+      <div class="coloredBorder">
+          <div>
+              <h1>Contate-nos</h1>
+              <p>
+                  Quer tomar um café conosco? Entre em contato pelo nosso discord!
+              </p>
+              <a href="https://github.com/DaemonTvz" class="github contact-button" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
+              <a href="https://discord.gg/QTMaJPfprB" class="discord contact-button" target="_blank"><i class="fa-brands fa-discord"></i>Discord</a>              
+          </div>
       </div>
-    </div>
-    <img alt="Encoded" src="./images/ec.png" />
   </div>
-
-  <div id="line"></div>
-
-  <div id="creations">
-    <div class="subdiv">
-      <h3 class="title">Encoded - Dev | Services</h3>
-      <h1>Criações</h1>
     </div>
-    <div class="backdrop"></div>
-    <div id="projects" class="projects">
-      <div class="project">
-        <div>
-          <h1>Meow Music</h1>
-          <p>Com código especialmente otimizado para ouvir música no discord, combinado com lavalink e uma abordagem minimalista, oferecemos a você um bot de música com 20 comandos, 24 filtros e uma experiência de audição como nenhuma outra.</p>
-          <a href="https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands" class="invite" target="_blank">Convide-me</a>
-        </div>
-        <img src="./images/344cba11bbfb72bf46202dbf6fea8116.webp" alt="Meow Music" />
-      </div>
-      <div class="project">
-        <div>
-          <h1>Meow Giveaway</h1>
-          <p>Com código especialmente otimizado para realizar sorteios no discord, combinado com Database e uma abordagem minimalista, oferecemos a você um bot de sorteio com uma experiencia como nenhuma outra.</p>
-          <a href="#" id="invite-meow-giveaway" class="invite">Convide-me</a>
-        </div>
-        <img src="./images/c51ebf26751d529bb403f86c17b6fc53.webp" alt="Meow Giveaway" />
-      </div>
+    <div id="line"></div>
+    <div class="credit">
+        <h2>Mantido por Encoded - Services</h2>
+        <h3><span id="cp-year"></span>&copy; Copyright - All Rights Reserved</h3>
+        <h3>Projetado e desenvolvido por
+            <a href="https://discord.com/users/921629692644163605" target="_blank">
+                <span class="rainbow-text">q</span>
+                <span class="rainbow-text">j</span>
+                <span class="rainbow-text">l</span>
+                <span class="rainbow-text">k</span>
+            </a>
+        </h3>
     </div>
-  </div>
 
-  <div id="line"></div>
-
-  <div id="services">
-    <div class="subdiv">
-      <h3 class="title">Encoded - Dev | Services</h3>
-      <h1>Serviços</h1>
-    </div>
-    <div class="backdrop"></div>
-    <div class="projects">
-      <div class="project">
-        <div>
-          <h1>Developer Lounge.</h1>
-          <p>Você é um desenvolvedor? Se sim, então venha Junte-se a nós e obtenha toneladas de informações e ajuda sobre seu código.</p>
-          <p>Ah, você não é um desenvolvedor? Não se preocupe, nunca é tarde para começar. Junte-se a nós, estamos aqui para te ajudar ♡</p>
-        </div>
-        <img src="https://cdn.pixabay.com/photo/2022/05/27/11/17/coding-7224945_640.png" alt="dev" />
-      </div>
-    </div>
-  </div>
-
-  <div id="line"></div>
-  
-  <div class="future">
-    <h1>Nosso futuro</h1>
-    <p>Temos muita coisa acontecendo e muitos planos futuros para vários projetos.<br /> Se você quiser nos ajudar ou talvez colaborar conosco, sinta-se à vontade.</p>
-    <a href="https://discord.gg/QTMaJPfprB" class="join" target="_blank">Junte-se a nós</a>
-  </div>
-
-  <div class="contact" id="contact">
-    <div class="coloredBorder">
-      <div>
-        <h1>Contate-nos</h1>
-        <p>Quer tomar um café conosco? Entre em contato pelo nosso discord!</p>
-        <a href="https://discord.gg/QTMaJPfprB" class="discord" target="_blank">Discord</a>
-        <a href="https://github.com/DaemonTvz" class="github" target="_blank">Github</a>
-      </div>
-    </div>
-  </div>
-  <div id="line"></div>
-  <div class="credit">
-    <h2>Mantido por Encoded - Services</h2>
-    <h3><span id="cp-year"></span>&copy; Copyright - All Rights Reserved</h3>
-    <h3>Projetado e desenvolvido por <a href="https://discord.com/channels/@me/1250256806077403196" target="_blank">q<span style="color: #0c00ee">j</span><span style="color: #d21e1e">l</span><span style="color: #b40a34">k</span></a></h3>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    function toggleHam() {
-      var ham = document.querySelector(".ham-expand");
-      ham.classList.toggle('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamExpand = document.querySelector('.ham-expand');
-      const links = document.querySelectorAll('.ham-expand .links a');
-
-      links.forEach(link => {
-        link.addEventListener('click', function () {
-          hamExpand.classList.remove('active');
-        });
-      });
-
-      // Adiciona o evento de clique para o botão "Convide-me" do Meow Giveaway
-      const inviteMeowGiveawayButton = document.getElementById('invite-meow-giveaway');
-      inviteMeowGiveawayButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        alert('O bot Meow Giveaway está atualmente desativado e será refeito em breve.');
-      });
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
