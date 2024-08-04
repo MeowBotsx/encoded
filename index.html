@@ -15,48 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @keyframes colorChange {
-            0% { color: #FF0000; } /* Vermelho Neon */
-            25% { color: #00FF00; } /* Verde Neon */
-            50% { color: #0000FF; } /* Azul Neon */
-            75% { color: #FFFF00; } /* Amarelo Neon */
-            100% { color: #FF00FF; } /* Rosa Neon */
-        }
-
-        .rainbow-text {
-            animation: colorChange 2s linear infinite;
-            display: inline;
-        }
-
-        /* Adicione o estilo para os botões aqui */
-        .join, .projectButton, .invite {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #000000;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .join {
-            background-color: #4CAF50;
-        }
-
-        .projectButton {
-            background-color: #008CBA;
-        }
-
-        .invite {
-            background-color: #f44336;
-        }
-
-        .join:hover, .projectButton:hover, .invite:hover {
-            opacity: 0.8;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -128,18 +86,18 @@
                 <img src="./images/344cba11bbfb72bf46202dbf6fea8116.webp" alt="Meow Music" />
             </div>
             <div class="project">
-                <div>
-                    <h1>Meow Giveaway</h1>
-                    <p>
-                        Com código especialmente otimizado para realizar sorteios no
-                        discord, combinado com Database e uma abordagem minimalista,
-                        oferecemos a você um bot de sorteio com uma experiencia como
-                        nenhuma outra.
-                    </p>
-                    <a href="#" id="invite-meow-giveaway" class="invite">Convide-me</a>
-                </div>
-                <img src="./images/c51ebf26751d529bb403f86c17b6fc53.webp" alt="Meow Giveaway" />
-            </div>
+              <div>
+                  <h1>Meow Giveaway</h1>
+                  <p>
+                      Com código especialmente otimizado para realizar sorteios no
+                      discord, combinado com Database e uma abordagem minimalista,
+                      oferecemos a você um bot de sorteio com uma experiência como
+                      nenhuma outra.
+                  </p>
+                  <a href="#" id="invite-meow-giveaway" class="invite">Convide-me</a>
+              </div>
+              <img src="./images/c51ebf26751d529bb403f86c17b6fc53.webp" alt="Meow Giveaway" />
+          </div>          
         </div>
     </div>
 
@@ -208,6 +166,14 @@
             </a>
         </h3>
     </div>
+<!-- Modal -->
+<div id="meow-giveaway-modal" class="modal">
+  <div class="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <h2>Bot Desativado</h2>
+      <p>O bot está atualmente desativado para manutenção. Fique atento para atualizações futuras.</p>
+  </div>
+</div>
 
     <script src="script.js"></script>
 </body>

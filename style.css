@@ -444,6 +444,7 @@ a {
   transition: color 0.5s ease;
 }
 
+/** Bloqueio de DevTools*/
 #access-denied-overlay {
   position: fixed;
   top: 0;
@@ -475,6 +476,99 @@ a {
 .overlay-content p {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+#reload-button {
+  background: #e1591f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reload-button:hover {
+  background: #d21e1e;
+}
+
+/* Meow Giveaways desativado */
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: none; /* Inicialmente oculto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  text-align: center;
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Modal - Show */
+.modal.show {
+  display: flex; /* Mostra o modal */
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.close:hover {
+  background: #e1591f;
+}
+
+/* Modal Header */
+.modal-content h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ff0000;
+}
+
+/* Modal Paragraph */
+.modal-content p {
+  margin: 15px 0;
+  font-size: 1em;
+  color: #ddd;
 }
 
 /* CSS para ajustar os botões de Discord e Github */
@@ -525,22 +619,6 @@ a {
   line-height: 1; /* Garante que a altura da linha não afete o tamanho do ícone */
 }
 
-/** Bloqueio de DevTools*/
-#reload-button {
-  background: #e1591f;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#reload-button:hover {
-  background: #d21e1e;
-}
-
 /** --------- KEYFRAMES ------- */
 
 @keyframes inviteHover {
@@ -573,4 +651,45 @@ a {
   50% {
     box-shadow: 0px 0px 30px var(--color2);
   }
+}
+
+@keyframes colorChange {
+  0% { color: #FF0000; } /* Vermelho Neon */
+  25% { color: #00FF00; } /* Verde Neon */
+  50% { color: #0000FF; } /* Azul Neon */
+  75% { color: #FFFF00; } /* Amarelo Neon */
+  100% { color: #FF00FF; } /* Rosa Neon */
+}
+
+.rainbow-text {
+  animation: colorChange 2s linear infinite;
+  display: inline;
+}
+
+/* Adicione o estilo para os botões aqui */
+.join, .projectButton, .invite {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join {
+  background-color: #4CAF50;
+}
+
+.projectButton {
+  background-color: #008CBA;
+}
+
+.invite {
+  background-color: #f44336;
+}
+
+.join:hover, .projectButton:hover, .invite:hover {
+  opacity: 0.8;
 }
