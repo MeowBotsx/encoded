@@ -94,3 +94,28 @@ window.addEventListener('click', function(event) {
       closeModal(); // Usa a função para fechar o modal
   }
 });
+
+// Mostrar/esconder o botão de voltar ao topo
+const backToTopButton = document.getElementById('back-to-top');
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+  
+  // Gradualmente desaparecer o cabeçalho
+  let opacity = 1 - window.scrollY / 300;
+  if (opacity >= 0) {
+    header.style.opacity = opacity;
+    header.classList.remove('hide');
+  } else {
+    header.classList.add('hide');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

@@ -619,6 +619,48 @@ a {
   line-height: 1; /* Garante que a altura da linha não afete o tamanho do ícone */
 }
 
+/* Estilo para o botão "back to top" */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+  color: #0f0f0f;
+  border: none;
+  padding: 10px 38px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 18px;
+  z-index: 1000;
+  transition: transform 0.2s cubic-bezier(0.32, 1.05, 0.52, 0.93), display 0.2s ease-in-out;
+}
+
+#back-to-top.show {
+  display: block;
+}
+
+#back-to-top:hover {
+  transform: scale(1.08);
+  animation: colorShift 2s infinite forwards;
+}
+
+#back-to-top:active {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+/* Estilos para esconder o cabeçalho gradualmente */
+header {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+header.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 /** --------- KEYFRAMES ------- */
 
 @keyframes inviteHover {
