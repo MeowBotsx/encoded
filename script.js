@@ -13,7 +13,7 @@ document.onkeydown = function (e) {
   }
 };
 
-/* Detectar DevTools
+// Detectar DevTools
 (function () {
   const threshold = 160;
   let devToolsOpen = false;
@@ -58,7 +58,7 @@ document.onkeydown = function (e) {
   setInterval(check, 1000);
   window.addEventListener("resize", check);
 })();
-*/
+
 
 //Menu Hamburguer
 function toggleHam() {
