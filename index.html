@@ -72,7 +72,7 @@
         <div>
           <h1>Meow Music</h1>
           <p>Com código especialmente otimizado para ouvir música no discord, combinado com lavalink e uma abordagem minimalista, oferecemos a você um bot de música com 20 comandos, 24 filtros e uma experiência de audição como nenhuma outra.</p>
-          <a href="https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands" class="invite" style="background: #63458f; color: #0f0f0f" target="_blank">Convide-me</a>
+          <a href="https://discord.com/oauth2/authorize?client_id=897179225176547408&permissions=287263026545&scope=bot%20applications.commands" class="invite" target="_blank">Convide-me</a>
         </div>
         <img src="./images/344cba11bbfb72bf46202dbf6fea8116.webp" alt="Meow Music" />
       </div>
@@ -80,7 +80,7 @@
         <div>
           <h1>Meow Giveaway</h1>
           <p>Com código especialmente otimizado para realizar sorteios no discord, combinado com Database e uma abordagem minimalista, oferecemos a você um bot de sorteio com uma experiencia como nenhuma outra.</p>
-          <a href="https://discord.com/api/oauth2/authorize?client_id=1233236197699092510&permissions=8&scope=bot%20applications.commands" class="invite" style="background: #63458f; color: #0f0f0f" target="_blank">Convide-me</a>
+          <a href="#" id="invite-meow-giveaway" class="invite">Convide-me</a>
         </div>
         <img src="./images/c51ebf26751d529bb403f86c17b6fc53.webp" alt="Meow Giveaway" />
       </div>
@@ -147,6 +147,13 @@
         link.addEventListener('click', function () {
           hamExpand.classList.remove('active');
         });
+      });
+
+      // Adiciona o evento de clique para o botão "Convide-me" do Meow Giveaway
+      const inviteMeowGiveawayButton = document.getElementById('invite-meow-giveaway');
+      inviteMeowGiveawayButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        alert('O bot Meow Giveaway está atualmente desativado e será refeito em breve.');
       });
     });
   </script>

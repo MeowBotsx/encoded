@@ -158,14 +158,24 @@ a {
   transition: 0.2s cubic-bezier(0.32, 1.05, 0.52, 0.93);
 }
 
+.projectButton {
+  color: #0f0f0f;
+  padding: 10px 38px;
+  background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+  font-size: 18px;
+  border-radius: 18px;
+  transition: 0.2s cubic-bezier(0.32, 1.05, 0.52, 0.93) !important;
+  border: 0px solid transparent;
+}
+
 .projectButton:hover {
-  transform: translateY(-2px);
-  border-bottom: 4px solid #eaeaea2b;
+  transform: scale(1.08);
+  animation: colorShift 2s infinite forwards;
 }
 
 .projectButton:active {
-  transform: translateY(3px);
-  border: 0px none;
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
 .join {
@@ -302,18 +312,23 @@ a {
 }
 
 .invite {
+  color: #0f0f0f; /* Cor do texto */
+  padding: 10px 38px;
+  background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%); /* Gradiente igual ao do botão 'Junte-se a nós' */
   font-size: 18px;
-  display: inline-block;
-  transition: 0.2s cubic-bezier(0.32, 1.05, 0.52, 0.93);
+  border-radius: 18px;
+  transition: 0.2s cubic-bezier(0.32, 1.05, 0.52, 0.93) !important;
+  border: 0px solid transparent;
 }
 
 .invite:hover {
-  transform: scale(1.1);
-  animation: inviteHover 1.2s;
+  transform: scale(1.08);
+  animation: colorShift 2s infinite forwards;
 }
 
 .invite:active {
-  transform: scale(0.85);
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
 .future {
